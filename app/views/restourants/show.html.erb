@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th width="200">Restourant Name</th>
+      <th>Description</th>
+      <th width="150">Address</th>
+      <th width="150">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @restourant.name %></td>
+        <td><%= @restourant.description %></td>
+        <td><%= @restourant.address %></td>
+        <td><%= @restourant.phone %></td>
+        <td><%= link_to "edit", edit_restourant_path(@restourant) %></td>
+        <td><%= link_to "destroy", @restourant, method: :delete,
+                                data: { confirm: "Are you sure?" } %></td>
+      </tr>
+  </tbody>
+</table>
+<%= link_to "Home", restourants_path %>

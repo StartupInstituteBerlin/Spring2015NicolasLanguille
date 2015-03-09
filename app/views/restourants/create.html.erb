@@ -1,0 +1,10 @@
+<h1>Create a new Restourant</h1>
+
+
+<%= simple_form_for :restourant, url: restourants_path do |f| %>
+  <%= f.input :name, label: 'Please insert the restourant name' %>
+  <%= f.input :description, as: :text, label: 'Describe the venue' %>
+  <%= f.input :address, as: :text, label: "Please insert the address of the venue" %>
+  <%= f.input :phone, label: "Please insert the number" %>
+  <%= f.button :submit %>
+<% end %>
