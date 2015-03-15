@@ -34,7 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ### Custom gem
 gem 'simple_form'
-gem 'foundation-rails'
+gem 'devise'
+gem "parsley-rails"
+gem 'jquery-validation-rails'
 
 
 group :development, :test do

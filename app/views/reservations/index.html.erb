@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th width="200">Restourant Name</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @restourants.each do |restourant| %>
+      <tr>
+        <td><%= restourant.name %></td>
+        <td><%= link_to "show", restourant_path(restourant) %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td>Insert a new Restourant</td>
+        <td><%= link_to "new", new_restourant_path %></td>
+      </tr>
+  </tbody>
+</table>

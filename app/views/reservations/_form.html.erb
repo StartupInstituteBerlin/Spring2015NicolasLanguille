@@ -1,0 +1,8 @@
+<%= simple_form_for @reservation do |f| %>
+  <%= f.input :last_name %>
+  <%= f.input :no_people%>
+  <%= f.input :datetime, as: :datetime %>
+  <%= f.input :email %>
+  <%= f.input :restourant_id, as: :hidden%>
+  <%= f.button :submit %>
+<% end %>

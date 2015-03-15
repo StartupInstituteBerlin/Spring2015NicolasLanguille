@@ -1,4 +1,5 @@
 class RestourantsController < ApplicationController
+  before_action :authenticate_user!, except: [ :index , :show]
 
   def index
     @restourants = Restourant.all
@@ -11,15 +12,15 @@ class RestourantsController < ApplicationController
   end
 
   def new
-    @restourant = Restourant.new()
+    @restourant = current_user.restourants.new()
   end
 
   def edit
-    @restourant = Restourant.find(params[:id])
+    @restourant = current_user.restourants.find(params[:id])
   end
 
   def destroy
-    @restourant = Restourant.find(params[:id])
+    @restourant = current_user.restourants.find(params[:id])
     @restourant.destroy
 
     redirect_to restourants_path
@@ -27,7 +28,7 @@ class RestourantsController < ApplicationController
   end
 
   def update
-    @restourant = Restourant.find(params[:id])
+    @restourant = current_user.restourants.find(params[:id])
 
     if @restourant.update(restourant_params)
       redirect_to @restourant
@@ -38,14 +39,14 @@ class RestourantsController < ApplicationController
 
 
   def create
-    @restourant = Restourant.new(restourant_params)
+    @restourant = current_user.restourants.new(restourant_params)
 
     if @restourant.save
       # Tell the UserMailer to send a welcome email after save
 
       redirect_to @restourant
     else
-      redirect_to edit # should work when @message.save is 'false'
+      render 'edit' # should work when @message.save is 'false'
     end
   end
 
