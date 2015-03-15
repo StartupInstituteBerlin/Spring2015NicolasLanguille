@@ -1,8 +1,10 @@
 class ReservationsController < ApplicationController
-  #  before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:new, :create]
 
   def index
-    # @reservations = current_user.reservations.all
+
+       user_restourant_ids = Restourant.where(user_id: current_user.id ).pluck(:id)
+       @reservations = Reservation.where(restourant_id: user_restourant_ids)
 
   end
 

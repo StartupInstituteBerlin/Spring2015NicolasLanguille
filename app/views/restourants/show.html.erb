@@ -18,11 +18,13 @@
         <td><%= link_to "Edit", edit_restourant_path(@restourant) %></td>
         <td><%= link_to "Remove", @restourant, method: :delete,
                                 data: { confirm: "Are you sure?" } %></td>
+        <td><%= link_to "Make a new reservation",
+                          new_reservation_for_restourant_path(restourant_id:@restourant.id)%></td>
+
       </tr>
   </tbody>
 </table>
 
-<%= link_to "Make a new reservation", new_reservation_for_restourant_path(restourant_id:@restourant.id)%>
 
 <div>
 <img src = "https://maps.googleapis.com/maps/api/staticmap?zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C11211%7C11206%7C11222&center=<%= @restourant.address %>" >

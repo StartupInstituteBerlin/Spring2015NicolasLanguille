@@ -1,19 +1,22 @@
 <table>
   <thead>
     <tr>
+      <th width="200">Reservation Name</th>
+      <th width="200">No of people</th>
+      <th width="200">Email</th>
+      <th width="200">Date time</th>
       <th width="200">Restourant Name</th>
     </tr>
   </thead>
   <tbody>
-      <% @restourants.each do |restourant| %>
+      <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= restourant.name %></td>
-        <td><%= link_to "show", restourant_path(restourant) %></td>
+        <td><%= reservation.last_name %></td>
+        <td><%= reservation.no_people %></td>
+        <td><%= reservation.email %></td>
+        <td><%= reservation.datetime %></td>
+        <td><%= link_to reservation.restourant.name, restourant_path(reservation.restourant) %></td>
       </tr>
       <% end %>
-      <tr>
-        <td>Insert a new Restourant</td>
-        <td><%= link_to "new", new_restourant_path %></td>
-      </tr>
   </tbody>
 </table>
