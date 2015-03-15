@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       # Tell the UserMailer to send a welcome email after save
 
-      # ReservationsMailer.send_reservation_confirm(@reservation).deliver_now
+      ReservationsMailer.send_reservation_confirm(@reservation).deliver_now
       redirect_to restourant_path(@reservation.restourant_id)
     else
       render 'edit' # should work when @message.save is 'false'
