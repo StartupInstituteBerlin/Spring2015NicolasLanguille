@@ -37,6 +37,8 @@ gem 'simple_form'
 gem 'devise'
 gem "parsley-rails"
 gem 'jquery-validation-rails'
+gem 'rmagick', '~> 2.13.4'
+gem 'simple_captcha2', require: 'simple_captcha'
 
 
 group :development, :test do

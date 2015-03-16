@@ -4,5 +4,8 @@
   <%= f.input :datetime, as: :datetime %>
   <%= f.input :email %>
   <%= f.input :restourant_id, as: :hidden%>
+
+  <%= show_simple_captcha %>
+
   <%= f.button :submit %>
 <% end %>

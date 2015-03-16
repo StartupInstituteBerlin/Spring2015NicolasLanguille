@@ -1,0 +1,11 @@
+<% if @restourant.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@restourant.errors.count, "error") %> prohibited this restourant from being saved:</h2>
+
+    <ul>
+    <% @restourant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

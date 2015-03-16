@@ -28,13 +28,13 @@ class ReservationsController < ApplicationController
   def create()
     @reservation = Reservation.new(reservation_params)
 
-    if @reservation.save
+    if @reservation.save && simple_captcha_valid?
       # Tell the UserMailer to send a welcome email after save
 
       ReservationsMailer.send_reservation_confirm(@reservation).deliver_now
       redirect_to restourant_path(@reservation.restourant_id)
     else
-      render 'edit' # should work when @message.save is 'false'
+      redirect_to  new_reservation_for_restourant_path(restourant_id: @reservation.restourant_id)# should work when @message.save is 'false'
     end
   end
 
