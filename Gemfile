@@ -40,6 +40,9 @@ gem 'jquery-validation-rails'
 gem 'rmagick', '~> 2.13.4'
 gem 'simple_captcha2', require: 'simple_captcha'
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

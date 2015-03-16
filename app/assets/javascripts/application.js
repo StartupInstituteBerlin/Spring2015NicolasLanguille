@@ -13,9 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+//= require bootstrap-sprockets
 //= require jquery.validate
 //= require jquery.validate.additional-methods
+
+//= require_tree .
+
 
 $(document).ready(function () {
   $(".simple_form").validate(
