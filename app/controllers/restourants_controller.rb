@@ -2,8 +2,9 @@ class RestourantsController < ApplicationController
   before_action :authenticate_user!, except: [ :index , :show]
 
   def index
-    @restourants = Restourant.all
 
+    @restourants = user_signed_in? ? current_user.restourants.all : Restourant.all
+  
   end
 
   def show

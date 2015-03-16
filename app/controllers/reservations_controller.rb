@@ -1,11 +1,13 @@
 class ReservationsController < ApplicationController
-    before_action :authenticate_user!, except: [:new, :create]
+    before_action :authenticate_user!, only: [:index]
 
   def index
 
-       user_restourant_ids = Restourant.where(user_id: current_user.id ).pluck(:id)
-       @reservations = Reservation.where(restourant_id: user_restourant_ids)
-
+      #  user_restourant_ids = current_user.restourants.pluck(:id)
+      #  @reservations = Reservation.where(restourant_id: user_restourant_ids)
+      
+      @reservations = Reservation.joins(restourant: :user).
+                                  where(restourants: { user_id:  current_user.id })
   end
 
   def show
