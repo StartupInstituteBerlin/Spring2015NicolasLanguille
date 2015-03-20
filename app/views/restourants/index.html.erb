@@ -5,19 +5,19 @@
     </tr>
   </thead>
   <tbody>
-      <% @restourants.each do |restourant| %>
-      <tr>
-        <td><%= restourant.name %></td>
-        <td><%= link_to "show", restourant_path(restourant) %></td>
-      </tr>
-      <% end %>
-      <% if user_signed_in? %>
-      <tr>
-        <td><%= link_to "Insert a new Restourant", new_restourant_path %></td>
-      </tr>
-      <tr>
-        <td><%= link_to "Show the reservations", reservations_path %></td>
-      </tr>
-      <% end %>
+    <% @restourants.each do |restourant| %>
+    <tr>
+      <td><%= restourant.name %></td>
+      <td><%= link_to "show", restourant_path(restourant) %></td>
+    </tr>
+    <% end %>
+    <% if user_signed_in? %>
+    <tr>
+      <td><%= link_to "Insert a new Restourant", new_restourant_path %></td>
+    </tr>
+    <tr>
+      <td><%= link_to "Show the reservations", reservations_path %></td>
+    </tr>
+    <% end %>
   </tbody>
 </table>

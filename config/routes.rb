@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :reservations, only: [:index,:create]
 
   get '/restourants/:restourant_id/reservations/new' => 'reservations#new',
-              as: :new_reservation_for_restourant
+  as: :new_reservation_for_restourant
 
 end

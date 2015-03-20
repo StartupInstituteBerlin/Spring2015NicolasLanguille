@@ -4,7 +4,7 @@ class RestourantsController < ApplicationController
   def index
 
     @restourants = user_signed_in? ? current_user.restourants.all : Restourant.all
-  
+
   end
 
   def show
@@ -23,9 +23,7 @@ class RestourantsController < ApplicationController
   def destroy
     @restourant = current_user.restourants.find(params[:id])
     @restourant.destroy
-
     redirect_to restourants_path
-
   end
 
   def update
@@ -43,17 +41,15 @@ class RestourantsController < ApplicationController
     @restourant = current_user.restourants.new(restourant_params)
 
     if @restourant.save
-      # Tell the UserMailer to send a welcome email after save
-
       redirect_to @restourant
     else
-      render 'edit' # should work when @message.save is 'false'
+      render 'edit'
     end
   end
 
   private
 
-    def restourant_params
-      params.require(:restourant).permit(:name,:description,:address, :phone)
-    end
+  def restourant_params
+    params.require(:restourant).permit(:name,:description,:address, :phone)
+  end
 end
