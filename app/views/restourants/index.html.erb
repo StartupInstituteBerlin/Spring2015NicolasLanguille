@@ -11,7 +11,7 @@
       <td><%= link_to "show", restourant_path(restourant) %></td>
     </tr>
     <% end %>
-    <% if user_signed_in? %>
+    <% if @owner %>
         <tr>
           <td><%= link_to "Insert a new Restourant", new_restourant_path %></td>
         </tr>

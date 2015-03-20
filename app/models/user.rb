@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_many :restourants
-  has_many :user_roles
-  has_many :roles, through: :user_roles
+  has_many :ratings
 
 
   # Include default devise modules. Others available are:
@@ -12,10 +11,19 @@ class User < ActiveRecord::Base
 
   before_create :set_default_role
 
+  def owner?
+    self.role_name == "owner" ? true : false
+  end
+
+  def registered?
+    self.role_name == "registered" ? true : false
+  end
+
+
   private
+  # role_name = "owner" || "registered"
   def set_default_role
-     @user_role = self.user_roles.new
-     @user_role.role_id = Role.find_by_name('registered')
+     self.role_name = "registered"
   end
 
 end
