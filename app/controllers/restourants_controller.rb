@@ -7,6 +7,7 @@ class RestourantsController < ApplicationController
   end
 
   def show
+    @registered = user_signed_in? && current_user.registered?
     @restourant = Restourant.find(params[:id])
   end
 
@@ -43,6 +44,16 @@ class RestourantsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def rate_restourant
+    Rating.create(
+          user_id: current_user.id,
+          restourant_id: params[:restourant_id],
+          value: params[:value]
+          )
+
+    render text: 'You rating has been considered!!!'
   end
 
   private

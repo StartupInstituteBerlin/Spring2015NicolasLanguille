@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require jquery.validate
 //= require jquery.validate.additional-methods
+//= require rating.js
 
 //= require_tree .
 
@@ -32,11 +33,6 @@ $(document).ready(function () {
         "restourant[description]": {required: true },
         "restourant[phone]": {required: true },
         "restourant[address]": {required: true }
-        "reservation[last_name]": {required: true},
-        "reservation[no_people]": {required: true, min: 1, max: 10 },
-        "reservation[phone]": {required: true },
-        "reservation[address]": {required: true }
-
       }
   });
 

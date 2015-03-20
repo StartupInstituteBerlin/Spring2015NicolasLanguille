@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   get '/restourants/:restourant_id/reservations/new' => 'reservations#new',
   as: :new_reservation_for_restourant
 
+  get 'restourant/:restourant_id/rating_id/:value' => 'restourants#rate_restourant',
+  as: :rate_restourant
+
 end

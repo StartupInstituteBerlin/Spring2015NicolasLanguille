@@ -8,22 +8,31 @@
     </tr>
   </thead>
   <tbody>
-      <tr>
-        <td><%= @restourant.name %></td>
-        <td><%= @restourant.description %></td>
-        <td><%= @restourant.address %></td>
-        <td><%= @restourant.phone %></td>
-        <td><%= link_to "Edit", edit_restourant_path(@restourant) %></td>
-        <td><%= link_to "Remove", @restourant, method: :delete,
-                                data: { confirm: "Are you sure?" } %></td>
-        <td><%= link_to "Make a new reservation",
-                          new_reservation_for_restourant_path(restourant_id:@restourant.id)%></td>
+    <tr>
+      <td><%= @restourant.name %></td>
+      <td><%= @restourant.description %></td>
+      <td><%= @restourant.address %></td>
+      <td><%= @restourant.phone %></td>
+      <td><%= link_to "Edit", edit_restourant_path(@restourant) %></td>
+      <td><%= link_to "Remove", @restourant, method: :delete,
+      data: { confirm: "Are you sure?" } %></td>
+      <td><%= link_to "Make a new reservation",
+      new_reservation_for_restourant_path(restourant_id:@restourant.id)%></td>
 
-      </tr>
+    </tr>
   </tbody>
 </table>
 
+<% if @registered %>
+<div id='ratings'>
+  <%= link_to "rate 1", rate_restourant_path(@restourant, 1), class: 'rate_it_btn btn btn-success' %>
+  <%= link_to "rate 2", rate_restourant_path(@restourant, 2), class: 'rate_it_btn btn btn-success' %>
+  <%= link_to "rate 3", rate_restourant_path(@restourant, 3), class: 'rate_it_btn btn btn-success' %>
+  <%= link_to "rate 4", rate_restourant_path(@restourant, 4), class: 'rate_it_btn btn btn-success' %>
+  <%= link_to "rate 5", rate_restourant_path(@restourant, 5), class: 'rate_it_btn btn btn-success' %>
+</div>
+<% end %>
 
-<div>
-<img src = "https://maps.googleapis.com/maps/api/staticmap?size=480x480&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=restaurant%257C996600%7C224<%= @restourant.address %>" >
+<div id='map'>
+  <img src = "https://maps.googleapis.com/maps/api/staticmap?size=480x480&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=restaurant%257C996600%7C224<%= @restourant.address %>" >
 </div>
