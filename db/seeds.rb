@@ -5,16 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-['registered', 'owner', 'admin'].each do |role|
-  Role.find_or_create_by({name: role})
-end
-
-User.all.each do |user|
-  role_id = Role.where(name: 'owner').pluck(:id)
-  UserRole.create(user_id: user.id, role_id: role_id)
-
-  role_id = Role.where(name: 'registered').pluck(:id)
-  UserRole.create(user_id: user.id, role_id: role_id)
-
-end

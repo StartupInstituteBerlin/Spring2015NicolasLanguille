@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ratings
+
   root 'restourants#index'
 
   devise_for :users
