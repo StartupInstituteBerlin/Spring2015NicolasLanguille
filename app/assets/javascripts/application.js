@@ -24,16 +24,13 @@
 
 $(document).ready(function () {
   $(".simple_form").validate(
-
     {
       debug: true,
       rules: {
-        //added this
-        "restourant[name]": {required: true},
-        "restourant[description]": {required: true },
-        "restourant[phone]": {required: true },
-        "restourant[address]": {required: true }
+        "restourant[name]":         {required: true },
+        "restourant[description]":  {required: true },
+        "restourant[phone]":        {required: true },
+        "restourant[address]":      {required: true }
       }
+    });
   });
-
-});

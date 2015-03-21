@@ -7,7 +7,10 @@ class RestourantsController < ApplicationController
   end
 
   def show
-    @registered = user_signed_in? && current_user.registered?
+    user_registered = user_signed_in? && current_user.registered?
+    @owner = user_signed_in? && current_user.owner?
+    @ratable = user_registered &&
+              !(Rating.find_by user_id: current_user.id, restourant_id: params[:id])
     @restourant = Restourant.find(params[:id])
   end
 
