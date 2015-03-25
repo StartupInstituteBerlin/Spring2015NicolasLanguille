@@ -9,7 +9,7 @@ class Restourant < ActiveRecord::Base
   validates :phone, presence: true
 
   def rated?
-    self.rate != nil
+    self.rate != nil 
   end
 
 end
