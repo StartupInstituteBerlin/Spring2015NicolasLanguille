@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  $(".simple_form").validate(
+  $('.restourant_form').validate(
     {
       debug: true,
       rules: {
-        "restourant[name]":         {required: true },
-        "restourant[description]":  {required: true },
-        "restourant[phone]":        {required: true },
-        "restourant[address]":      {required: true }
+        restourant_name:         {required: true },
+        restourant_description:  {required: true },
+        restourant_phone:        {required: true },
+        restourant_address:      {required: true }
       }
     });
-  });
+});

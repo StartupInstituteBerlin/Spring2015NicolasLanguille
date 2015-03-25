@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
-  resources :ratings
-
   root 'restourants#index'
 
   devise_for :users
 
-  # resources :user do
-  #   resources :restourants
-  # end
-
+  resources :ratings
   resources :restourants
   resources :reservations, only: [:index,:create]
 

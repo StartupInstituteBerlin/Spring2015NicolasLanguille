@@ -11,12 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+
 //= require turbolinks
 
 //= require bootstrap-sprockets
 //= require jquery.validate
 //= require jquery.validate.additional-methods
+
 //= require rating.js
+//= require reservation_form.js
 //= require restourant_form.js
+
 //= require_tree .

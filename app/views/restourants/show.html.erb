@@ -1,47 +1,35 @@
-<table>
-  <thead>
-    <tr>
-      <th width="200">Restourant Name</th>
-      <th width="200">Description</th>
-      <th width="150">Address</th>
-      <th width="150">Phone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @restourant.name %></td>
-      <td><%= @restourant.description %></td>
-      <td><%= @restourant.address %></td>
-      <td><%= @restourant.phone %></td>
-    </tr>
-  </tbody>
-</table>
+<div class= 'restourant_details'>
+  <h2><%= @restourant.name %></h2><br>
+  <small><%= @restourant.description%></small><br>
+  <address><%= @restourant.address %></address>
+  <abbr title="Phone">P: </abbr><%= @restourant.phone %>
+</div>
 
 <% if @owner %>
     <%= link_to "Edit", edit_restourant_path(@restourant),
-        class: 'rate_it_btn btn btn-success' %>
+        class: 'btn btn-warning' %>
     <%= link_to "Remove", @restourant,
         method: :delete,
-        class: 'rate_it_btn btn btn-success',
+        class: 'rate_it_btn btn btn-danger',
         data: { confirm: "Are you sure?" } %>
 <% else %>
     <%= link_to "Reserve",
         new_reservation_for_restourant_path(restourant_id: @restourant.id),
-        class: 'rate_it_btn btn btn-success'%>
+        class: 'btn btn-success'%>
 <% end %>
 
 <% if @ratable %>
-    <div id='ratings'>
+    <div class='ratings'>
       <%= link_to "rate 1", rate_restourant_path(@restourant, 1),
-          class: 'rate_it_btn btn btn-success' %>
+          class: 'rate_it_btn btn btn-warning' %>
       <%= link_to "rate 2", rate_restourant_path(@restourant, 2),
-          class: 'rate_it_btn btn btn-success' %>
+          class: 'rate_it_btn btn btn-warning' %>
       <%= link_to "rate 3", rate_restourant_path(@restourant, 3),
-          class: 'rate_it_btn btn btn-success' %>
+          class: 'rate_it_btn btn btn-warning' %>
       <%= link_to "rate 4", rate_restourant_path(@restourant, 4),
-          class: 'rate_it_btn btn btn-success' %>
+          class: 'rate_it_btn btn btn-warning' %>
       <%= link_to "rate 5", rate_restourant_path(@restourant, 5),
-          class: 'rate_it_btn btn btn-success' %>
+          class: 'rate_it_btn btn btn-warning' %>
     </div>
 <% end %>
 

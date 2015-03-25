@@ -56,7 +56,7 @@ class RestourantsController < ApplicationController
           value: params[:value]
           )
 
-    render text: 'You rating has been considered!!!'
+    render text: 'Your rating has been considered!!!'
   end
 
   private

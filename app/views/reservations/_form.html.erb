@@ -1,17 +1,10 @@
-<table>
-  <tbody>
-      <%= simple_form_for @reservation do |f| %>
-      <tr>
-        <td><%= f.input :last_name %></td>
-        <td><%= f.input :no_people%></td>
-        <td><%= f.input :email %></td>
-        <td><%= f.input :datetime, as: :datetime %></td>
-        <td><%= f.input :restourant_id, as: :hidden%></td>
-      </tr>
-  </tbody>
-</table>
+<%= simple_form_for @reservation, html: {class: :reserv_form} do |f| %>
+  <%= f.input :last_name %>
+  <%= f.input :no_people%>
+  <%= f.input :email %>
+  <%= f.input :datetime, as: :datetime %>
+  <%= f.input :restourant_id, as: :hidden%>
 
-<%= show_simple_captcha %>
-<%= f.button :submit %>
-
+  <%= show_simple_captcha %>
+  <%= f.button :submit %>
 <% end %>

@@ -1,23 +1,11 @@
-<table>
-  <thead>
-    <tr>
-      <th width="200">Restourant Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @restourants.each do |restourant| %>
-    <tr>
-      <td><%= restourant.name %></td>
-      <td><%= link_to "show", restourant_path(restourant) %></td>
-    </tr>
-    <% end %>
-    <% if @owner %>
-        <tr>
-          <td><%= link_to "Insert a new Restourant", new_restourant_path %></td>
-        </tr>
-      <tr>
-          <td><%= link_to "Show the reservations", reservations_path %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1><th width="200">Restourants</th></h1>
+
+<% @restourants.each do |restourant| %>
+  <h2><%= restourant.name %></h2>
+  <%= link_to "show", restourant_path(restourant), class: 'btn btn-info' %>
+<% end %>
+
+<% if @owner %>
+  <%= link_to "New Restourant", new_restourant_path, class: 'btn btn-default' %>
+  <%= link_to "Reservations", reservations_path,class: 'btn btn-default' %>
+<% end %>

@@ -4,20 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <div class="container">
 
-      <nav class="navbar navbar-inverse">
+      <nav class="navbar navbar-default">
         <button type="button" class="btn btn-default navbar-btn">
           <%= link_to "Home", restourants_path %>
         </button>
-        <% if user_signed_in? %>
+        <% if current_user %>
           <strong><%= current_user.email %></strong>
           <button type="button" class="btn btn-default navbar-btn">
             <%= link_to "Edit profile", edit_user_registration_path %>
@@ -43,6 +40,9 @@
     <% end %>
 
     <%= yield %>
+
   </div>
   </body>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
 </html>
