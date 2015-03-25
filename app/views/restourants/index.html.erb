@@ -1,11 +1,21 @@
 <h1><th width="200">Restourants</th></h1>
-
+<div class="restourants_index">
 <% @restourants.each do |restourant| %>
   <h2><%= restourant.name %></h2>
   <%= link_to "show", restourant_path(restourant), class: 'btn btn-info' %>
+  <% if restourant.rated? %>
+    <button type="button" class="btn btn-success btn-lg" disabled="disabled">
+      Rate  <%= restourant.rate.round(2) %></button>
+  <% else %>
+    <button type="button" class="btn btn-default btn-lg" disabled="disabled">
+      Not yet rated !!</button>
+  <% end %>
 <% end %>
+</div>
 
 <% if @owner %>
+<div class="owner_commands">
   <%= link_to "New Restourant", new_restourant_path, class: 'btn btn-default' %>
   <%= link_to "Reservations", reservations_path,class: 'btn btn-default' %>
+</div>
 <% end %>

@@ -12,11 +12,11 @@ class User < ActiveRecord::Base
   before_create :set_default_role
 
   def owner?
-    self.role_name == "owner" ? true : false
+    self.role_name == "owner"
   end
 
   def registered?
-    self.role_name == "registered" ? true : false
+    self.role_name == "registered"
   end
 
 

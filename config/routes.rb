@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'restourants#index'
 
   devise_for :users
+  devise_scope :user do
+    get "/users/sign_out" => "devise/sessions#destroy", as: :get_destroy_user_session
+  end      
 
   resources :ratings
   resources :restourants

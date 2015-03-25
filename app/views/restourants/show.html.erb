@@ -18,7 +18,7 @@
         class: 'btn btn-success'%>
 <% end %>
 
-<% if @ratable %>
+<% if @ratable && !@owner%>
     <div class='ratings'>
       <%= link_to "rate 1", rate_restourant_path(@restourant, 1),
           class: 'rate_it_btn btn btn-warning' %>

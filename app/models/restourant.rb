@@ -8,4 +8,8 @@ class Restourant < ActiveRecord::Base
   validates :description, presence: true
   validates :phone, presence: true
 
+  def rated?
+    self.rate != nil
+  end
+
 end

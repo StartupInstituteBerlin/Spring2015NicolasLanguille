@@ -50,12 +50,12 @@ class RestourantsController < ApplicationController
   end
 
   def rate_restourant
-    Rating.create(
+    rate = Rating.create(
           user_id: current_user.id,
           restourant_id: params[:restourant_id],
           value: params[:value]
           )
-
+    rate.evaluate_restourant_rate
     render text: 'Your rating has been considered!!!'
   end
 
