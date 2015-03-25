@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.restourant_form').validate(
+  $(".restourant_form").validate(
     {
       debug: true,
       rules: {
