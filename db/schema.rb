@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325104807) do
+ActiveRecord::Schema.define(version: 20150327105855) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "value"
@@ -40,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150325104807) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.float    "rate"
+    t.integer  "category_id"
   end
 
   create_table "simple_captcha_data", force: :cascade do |t|
