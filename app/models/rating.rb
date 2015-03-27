@@ -1,6 +1,6 @@
 class Rating < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :restourants
+  belongs_to :user
+  belongs_to :restourant
 
   validates :user_id, presence: true
   validates :restourant_id, presence: true
