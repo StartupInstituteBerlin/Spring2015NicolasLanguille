@@ -42,6 +42,8 @@ gem 'simple_captcha2', require: 'simple_captcha'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'awesome_print'
+gem 'faker'
 
 
 group :development, :test do
