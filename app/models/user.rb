@@ -8,9 +8,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
-  before_create :set_default_role
-
   def owner?
     self.role_name == "owner"
   end
@@ -18,12 +15,4 @@ class User < ActiveRecord::Base
   def registered?
     self.role_name == "registered"
   end
-
-
-  private
-  # role_name = "owner" || "registered"
-  def set_default_role
-     self.role_name = "registered"
-  end
-
 end
