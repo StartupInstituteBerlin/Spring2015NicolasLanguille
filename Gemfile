@@ -41,11 +41,9 @@ gem 'simple_captcha2', require: 'simple_captcha'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'awesome_print'
-gem 'faker'
 
 gem 'pg'
 gem 'rails_12factor'
-gem 'factory_girl_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,8 +56,16 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
