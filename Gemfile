@@ -46,6 +46,7 @@ gem 'pg'
 gem 'rails_12factor'
 gem 'carrierwave'
 gem "mini_magick"
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -66,7 +67,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
