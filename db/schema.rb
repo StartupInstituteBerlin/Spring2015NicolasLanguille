@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327105855) do
+ActiveRecord::Schema.define(version: 20150401122006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150327105855) do
     t.integer  "user_id"
     t.float    "rate"
     t.integer  "category_id"
+    t.string   "logo"
   end
 
   create_table "simple_captcha_data", force: :cascade do |t|
