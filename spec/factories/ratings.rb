@@ -1,6 +1,6 @@
-FactoryGirl.define do 
+FactoryGirl.define do
   factory :rating do
-    value Faker::Number.between(1,5)
+    value rand(5..30)
 
     association :user_id, factory: :user
     association :restourant_id, factory: :restourant
