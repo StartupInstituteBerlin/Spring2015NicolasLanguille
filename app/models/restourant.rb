@@ -9,6 +9,8 @@ class Restourant < ActiveRecord::Base
   validates :description, presence: true
   validates :phone, presence: true
 
+  mount_uploader :logo, LogoUploader
+
   def rated?
     self.rate != nil 
   end

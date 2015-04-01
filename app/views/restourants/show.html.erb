@@ -3,6 +3,8 @@
   <small><%= @restourant.description%></small><br>
   <address><%= @restourant.address %></address>
   <abbr title="Phone">P: </abbr><%= @restourant.phone %>
+  <abbr title="Phone">P: </abbr><%= @restourant.phone %>
+  <%= image_tag(@restourant.logo) %>
 </div>
 
 <% if @owner %>
