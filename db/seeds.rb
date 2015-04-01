@@ -6,6 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+owner = User.create(
+          email: "owner@rest.com",
+          password: "12345678",
+          password_confirmation: "12345678",
+          role_name: "owner"
+          )
+
+
+registered_user = User.create(
+                    email: "registered@rest.com",
+                    password: "12345678",
+                    password_confirmation: "12345678",
+                    role_name: "registered"
+                    )
+
 category_names = [
     'italian',
     'french',
@@ -19,22 +34,10 @@ category_names.each do |category_name|
   category = Category.create(
               name: category_name
               )
+end
 
-  owner = User.create(
-            email: Faker::Internet.email,
-            password: "12345678",
-            password_confirmation: "12345678",
-            role_name: "owner"
-            )
-
-  registered_user = User.create(
-                      email: Faker::Internet.email,
-                      password: "12345678",
-                      password_confirmation: "12345678",
-                      role_name: "registered"
-                      )
-
-  10.times.each do
+Category.all.each do |category|
+  2.times.each do
     address = Faker::Address.street_name + ", " +
               Faker::Address.zip + ", " +
               Faker::Address.city
@@ -48,7 +51,7 @@ category_names.each do |category_name|
                   category_id: category.id
                   )
 
-    5.times.each do
+    3.times.each do
       Reservation.create(
         last_name: Faker::Name.last_name,
         datetime: Faker::Time.forward(23,:evening),
