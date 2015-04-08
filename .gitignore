@@ -18,3 +18,5 @@
 
 #exclude local_env values
 /config/local_env.yml
+
+*.png
