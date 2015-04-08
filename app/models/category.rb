@@ -3,10 +3,12 @@ class Category < ActiveRecord::Base
 
   before_validation :capitalize_name
 
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true
 
   private
     def capitalize_name
-      self.name.capitalize!
+      if self.name?
+        self.name.capitalize!
+      end
     end
 end
