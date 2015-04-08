@@ -17,9 +17,6 @@ class Rating < ActiveRecord::Base
     restourant = Restourant.find(self.restourant_id)
     restourant.rate = average
     restourant.save
-
-    #puts "\n\n\naverage: #{average}"
-    #puts "\n\n\nrest value: #{restourant.rate}\n\n\n"
   end
 
   private
