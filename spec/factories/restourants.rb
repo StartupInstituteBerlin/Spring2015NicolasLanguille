@@ -2,10 +2,7 @@ FactoryGirl.define do
   factory :restourant do
     name        { generate :restourant_name }
     address     { generate :address }
-    description "Lorem ipsum dolor sit amet,
-                consectetur adipisci elit,
-                sed eiusmod tempor incidunt
-                ut labore et dolore magna aliqua"
+    description "Est repellat soluta ut sint."
     phone       { generate :phone }
     # rate
 
