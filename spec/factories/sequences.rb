@@ -4,7 +4,7 @@ FactoryGirl.define do
   end
 
   sequence :name do |n|
-    "whateever#{n}"
+    "whateever you want #{n}"
   end
 
   sequence :restourant_name do |n|
