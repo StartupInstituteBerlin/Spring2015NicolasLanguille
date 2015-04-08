@@ -2,6 +2,8 @@
 <div class="restourants_index">
 <% @restourants.each do |restourant| %>
   <h2><%= restourant.name %></h2>
+  <%= image_tag restourant.logo_url :thumb  %>
+
   <%= link_to "show", restourant_path(restourant), class: 'btn btn-info' %>
   <% if restourant.rated? %>
     <button type="button" class="btn btn-success btn-lg" disabled="disabled">
