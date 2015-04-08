@@ -3,11 +3,10 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.joins(restourant: :user).
-    where(restourants: { user_id:  current_user.id })
+                                where(restourants: { user_id:  current_user.id })
   end
 
   def show
-
     @reservation = Reservation.find(params[:id])
   end
 
@@ -32,6 +31,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:last_name,:no_people,:datetime,:email,:restourant_id)
+    params.require(:reservation)
+          .permit(:last_name,:no_people,:datetime,:email,:restourant_id)
   end
 end
