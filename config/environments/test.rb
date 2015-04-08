@@ -39,4 +39,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # take out from console db transaction for passed tests
+  config.log_level = :warn
+
 end

@@ -55,4 +55,6 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"]
   }
 
+  config.log_level = :debug
+
 end
